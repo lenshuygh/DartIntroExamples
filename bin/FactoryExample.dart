@@ -28,6 +28,14 @@ class Square implements Shape {
   num get area => pow(side, 2);
 }
 
+//because every class defines an interface we can do the following
+class CircleMock implements Circle{
+  @override
+  num area;
+  @override
+  num radius;
+}
+
 main(){
   //no factory used
   /*final circle = Circle(2);
@@ -54,3 +62,4 @@ Shape shapeFactory(String type){
   if(type == 'square') return Square(2);
   throw "Can't create $type.";
 }
+
