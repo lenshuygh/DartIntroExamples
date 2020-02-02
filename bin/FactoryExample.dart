@@ -2,11 +2,12 @@ import 'dart:math';
 
 abstract class Shape {
   //using dart's built in factory keyword
-  factory Shape(String type){
-    if(type == 'circle') return Circle(2);
-    if(type == 'square') return Square(2);
+  factory Shape(String type) {
+    if (type == 'circle') return Circle(2);
+    if (type == 'square') return Square(2);
     throw "Can't create $type";
   }
+
   num get area;
 }
 
@@ -29,14 +30,14 @@ class Square implements Shape {
 }
 
 //because every class defines an interface we can do the following
-class CircleMock implements Circle{
+class CircleMock implements Circle {
   @override
   num area;
   @override
   num radius;
 }
 
-main(){
+main() {
   //no factory used
   /*final circle = Circle(2);
   final square = Square(2);*/
@@ -57,9 +58,8 @@ main(){
 }
 
 //top level function
-Shape shapeFactory(String type){
-  if(type == 'circle') return Circle(2);
-  if(type == 'square') return Square(2);
+Shape shapeFactory(String type) {
+  if (type == 'circle') return Circle(2);
+  if (type == 'square') return Square(2);
   throw "Can't create $type.";
 }
-
